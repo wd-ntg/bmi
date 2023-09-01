@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.modal_bg {
+  background-color: rgba(226, 226, 226, 0.8);
+  backdrop-filter: blur(20px);
+}
+.modal_bg-dark {
+  background-color: rgba(159, 157, 157, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.text {
+  color: rgba(226, 226, 226, 0.4);
+}
+
+.plant {
+  animation: 2.5s plant forwards infinite;
+}
+
+@keyframes plant {
+  0% {
+    transform: translateY(-24px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-24px);
+  }
+}
+
