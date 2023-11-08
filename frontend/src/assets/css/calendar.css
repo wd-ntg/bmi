@@ -54,3 +54,7 @@ input {
 .fc-view {
   height: 480px;
 }
+
+.fc-media-screen {
+  min-width: 624px !important;
+}

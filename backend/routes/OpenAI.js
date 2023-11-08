@@ -3,16 +3,19 @@ const passport = require("passport");
 
 const HealthIndexModel = require("../models/HealthIndex");
 const UserModel = require("../models/Users");
-const FoodRecModel = require("../models/FoodRec");
 
 const router = express.Router();
 
 const { OpenAI } = require("openai");
 
 const openai = new OpenAI({
-  apiKey: "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",
-  organization: "org-mtgRW3my2tOru3fol4Ts3diA",
+  apiKey: "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",
+  organization: "org-UOQe2ucZnYTY7jIv5YbdmcDD",
 });
+// const openai = new OpenAI({
+//   apiKey: "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",
+//   organization: "org-mtgRW3my2tOru3fol4Ts3diA",
+// });
 
 router.post(
   "/response",
@@ -45,7 +48,7 @@ router.post(
         messages: [
           {
             role: "user",
-            content: `Với chiều cao ${height} cm, cân nặng ${weight} kg và chỉ số BMI là ${BMI} hãy cho tôi một bài báo cáo dinh dưỡng đơn giản cho cơ thể này và cho biết một ngày cần nạp tối thiểu những chất dinh dưỡng nào đưa ra con số cụ thể. (Trình bày dưới dạng liệt kê theo danh sách)`,
+            content: `Với chiều cao ${height} cm, cân nặng ${weight} kg và chỉ số BMI là ${BMI} hãy cho tôi một bài báo cáo dinh dưỡng đơn giản cho cơ thể này và cho biết một ngày cần nạp tối thiểu những chất dinh dưỡng nào đưa ra con số cụ thể. (Trình bày dưới dạng liệt kê theo danh sách với tối đa 5 dòng)`,
           },
         ],
         model: "gpt-3.5-turbo",
@@ -70,7 +73,7 @@ router.post(
         messages: [
           {
             role: "user",
-            content: `Với chiều cao ${height} cm, cân nặng ${weight} kg và chỉ số BMI là ${BMI} hãy cho tôi một lời khuyên để cải thiện tình trạng sức khỏe cũng như các chỉ số cơ thể. (Trình bày dưới dạng liệt kê theo danh sách)`,
+            content: `Với chiều cao ${height} cm, cân nặng ${weight} kg và chỉ số BMI là ${BMI} hãy cho tôi một lời khuyên để cải thiện tình trạng sức khỏe cũng như các chỉ số cơ thể. (Trình bày dưới dạng liệt kê theo danh sách với tối đa là 5 dòng)`,
           },
         ],
         model: "gpt-3.5-turbo",

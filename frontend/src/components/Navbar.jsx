@@ -94,18 +94,18 @@ export default function Navbar({ blog, personal, chatai }) {
         >
           <div className="text-black modal_bg backdrop-opacity-10 px-5 py-2 rounded-md absolute top-8 right-[46px]">
             <Link to="/dashboard">
-              <div className="cursor-pointer hover:text-green_light_none my-2">
+              <div className="cursor-pointer hover:text-gray-500 my-2">
                 Tài khoản
               </div>
             </Link>
 
             <Link to="/">
-              <div className="cursor-pointer hover:text-green_light_none my-2">
+              <div className="cursor-pointer hover:text-gray-500 my-2">
                 Chia sẻ
               </div>
             </Link>
             <div
-              className="cursor-pointer hover:text-green_light_none my-2"
+              className="cursor-pointer hover:text-gray-500 my-2"
               onClick={() => {
                 auth.signOut();
                 handleLogout()

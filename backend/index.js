@@ -9,12 +9,14 @@ const User = require("./models/Users.js");
 const initAuth = require("./routes/Auth.js");
 const initHealthIndex = require("./routes/HealthIndex.js");
 const initOpenAI = require("./routes/OpenAI.js")
+const initCalendar = require('./routes/Calendar.js')
+const initChat = require("./routes/Chat.js")
 
 // OpenAI
 const { OpenAI } = require("openai");
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
   organization: "org-mtgRW3my2tOru3fol4Ts3diA",
 });
 
@@ -70,6 +72,8 @@ passport.use(
 app.use("/auth", initAuth);
 app.use("/healthindex", initHealthIndex);
 app.use("/openai", initOpenAI)
+app.use("/calendar", initCalendar)
+app.use("/chat", initChat)
 
 app.get("/", (req, res) => {
   res.send("Server i running");

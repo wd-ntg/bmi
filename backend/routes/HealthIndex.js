@@ -3,7 +3,6 @@ const passport = require("passport");
 
 const HealthIndexModel = require("../models/HealthIndex");
 const UserModel = require("../models/Users");
-const FoodRecModel = require("../models/FoodRec");
 
 const router = express.Router();
 
@@ -58,7 +57,6 @@ router.get(
     try {
       const currentUserId = req.params.currentUserId;
       const user = await UserModel.findOne({ _id: currentUserId });
-      console.log(user)
       if (!user) {
         return res.status(301).json({ err: "Invalid User ID" });
       }

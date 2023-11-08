@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LoginImg from "../assets/img/login.jpg";
 import "../assets/css/main.css";
@@ -44,7 +44,6 @@ function Login() {
           const date = new Date();
           date.setDate(date.getDate() + 30);
           setCookie("token", token, { path: "/", expires: date });
-          alert("Success Login");
           navigate("/home");
         } else {
           alert("Failure");
@@ -85,7 +84,6 @@ function Login() {
         const date = new Date();
         date.setDate(date.getDate() + 30);
         setCookie("token", token, { path: "/", expires: date });
-        alert("Success Login");
         navigate("/home");
       } else {
         alert("Failure");

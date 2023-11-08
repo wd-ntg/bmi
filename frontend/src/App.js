@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import Blog from "./pages/Blog";
 import Personal from "./pages/Personal";
 import ChatAI from "./pages/ChatAI";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [cookie, setCookie] = useCookies(["token"]);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/personal" element={<Personal />} />
           <Route path="/chatai" element={<ChatAI />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       ) : (
         <Routes>

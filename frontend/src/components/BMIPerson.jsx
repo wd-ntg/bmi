@@ -89,7 +89,7 @@ function BMIPerson({ currentUser }) {
 
   return (
     <div className="flex  items-center justify-between flex-col">
-      <div className="bg-slate-300 w-full px-80">
+      <div className="bg-green_light_none w-full px-80  h-[260px]">
         <nav className="flex items-center mt-20">
           <div className="">Trang chủ</div>
           <div className="text-xs font-semibold mx-2">
@@ -255,7 +255,7 @@ function BMIPerson({ currentUser }) {
               </div>
             ) : (
               <div className="py-4">
-                <div className="text-2xl font-semibold">Thông tin</div>
+                <div className="text-2xl font-semibold">Lời khuyên</div>
                 <div className="w-80 bg-gradient-to-r from-green_light_none to-green_light h-[2px] mb-8 mt-2"></div>
                 <div className="flex w-full">
                   <div>{adviceOpenAi}</div>
@@ -265,7 +265,7 @@ function BMIPerson({ currentUser }) {
           </div>
         )}
       </div>
-      {displayCard[3] && <Calender />}
+      {displayCard[3] && <Calender currentUser={currentUser}/>}
     </div>
   );
 }
