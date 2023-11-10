@@ -11,7 +11,7 @@ const initHealthIndex = require("./routes/HealthIndex.js");
 const initOpenAI = require("./routes/OpenAI.js")
 const initCalendar = require('./routes/Calendar.js')
 const initChat = require("./routes/Chat.js")
-
+global.AbortController = require('abort-controller');
 // OpenAI
 const { OpenAI } = require("openai");
 
